@@ -1,0 +1,2 @@
+module ThiefsHelper
+end

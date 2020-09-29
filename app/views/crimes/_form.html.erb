@@ -1,0 +1,33 @@
+<%= form_with(model: crime, local: true) do |form| %>
+<li style="list-style: none">
+<%= form.label :title, "Titulo" %>
+<%= form.text_field :title %>
+</li>
+<li style="list-style: none">
+<%= form.label :labels, "Etiquetas" %>
+<%= form.text_field :labels %>
+</li>
+<li style="list-style: none">
+<%= form.label :place, "Lugar" %>
+<%= form.text_field :place %>
+</li>
+<li style="list-style: none">
+<%= form.label :description, "descripcion" %>
+<%= form.text_field :description %>
+</li>
+  <% if crime.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(crime.errors.count, "error") %> prohibited this crime from being saved:</h2>
+
+      <ul>
+        <% crime.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions" >
+    <%= form.submit %>
+  </div>
+<% end %>
