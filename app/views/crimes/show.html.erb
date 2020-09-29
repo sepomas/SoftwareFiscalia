@@ -63,6 +63,6 @@
 <%end%>
 </table>
 </div>
-<div class="col-3">
-</div>
-<div>
+<%(0...@crime.images.count).each do |image| %>
+    <%= image_tag(@crime.images[image], style:'width:50%') %>
+<% end %>
